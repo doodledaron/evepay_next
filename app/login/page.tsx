@@ -1,5 +1,5 @@
 // import BackButton from "@/components/Button/back-button";
-import NextButton from "../../components/Button/next-button";
+import NextButton from "../../components/Button/getStarted-button";
 import LoginFields from "../../components/InputField/login-fields";
 
 export default function Home() {
