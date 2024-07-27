@@ -20,35 +20,60 @@ interface Transaction {
   timestamp: string;
 }
 
-interface ApiResponseData {
-  status: number;
-  result: Transaction[];
-  pagination: {
-    current_page: number;
-    first_page_url: string;
-    last_page: number;
-    last_page_url: string;
-    next_page_url: string | null;
-    per_page: number;
-    prev_page_url: string | null;
-    total: number;
-  };
-}
-
 interface ApiResponse {
   status: string;
-  data: ApiResponseData;
+  data: Transaction[];
+}
+
+interface BalanceResponse {
+  status: string;
+  data: {
+    balance: string;
+  };
 }
 
 const HistoryCard = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [availableToken, setAvailableToken] = useState<string>("52000"); // Adjust this based on actual data source
+  const [availableToken, setAvailableToken] = useState<string>("");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/maschain_token/api_get_transaction_from/0x5b3a8eCB9677F56e46d67B7e69900cE322c030d1")
-      .then((response) => response.json())
-      .then((data: ApiResponse) => {
-        setTransactions(data.data.result);
+    const fetchTransactions = fetch("https://evepay.onrender.com/maschain_token/api_get_all_transaction/0x5b3a8eCB9677F56e46d67B7e69900cE322c030d1")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("HTTP error! status: ${ response.status }");
+        }
+        return response.json();
+      });
+
+    const fetchBalance = fetch("https://evepay.onrender.com/maschain_token/api_check_balance", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        wallet_address: "0x5b3a8eCB9677F56e46d67B7e69900cE322c030d1",
+        contract_address: "0xA10b5960afae880bA86cb3Bb5ec1Ae2eBAe19083"
+      })
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error("HTTP error! status: ${ response.status }");
+      }
+      return response.json();
+    });
+
+    Promise.all([fetchTransactions, fetchBalance])
+      .then(([transactionData, balanceData]) => {
+        if (transactionData.status === 'success') {
+          setTransactions(transactionData.data);
+        } else {
+          console.error('Failed to fetch transactions:', transactionData.message);
+        }
+
+        if (balanceData.status === 'success') {
+          setAvailableToken(balanceData.data.result);
+        } else {
+          console.error('Failed to fetch balance:', balanceData.message);
+        }
       })
       .catch((error) => {
         console.error("Error fetching the API:", error);
@@ -71,19 +96,25 @@ const HistoryCard = () => {
                   <div className="flex flex-row items-center">
                     <p className="text-base font-medium">{new Date(transaction.timestamp).toLocaleDateString()}</p>
                     <div className="pl-3 flex items-center justify-center">
-                      <span className="flex items-center justify-center bg-dark-green-transparent rounded-full px-3 py-0.5">
-                        <Icon
-                          icon="charm:circle-tick"
-                          className="text-dark-green mr-2"
-                          style={{ fontSize: "14px" }} // Adjust icon size as needed
-                        />
-                        <p className="text-xs font-semibold text-dark-green">Paid</p>
-                      </span>
+                      {transaction.from === "Alpha" && (
+                        <span className="flex items-center justify-center bg-dark-green-transparent rounded-full px-3 py-0.5">
+                          <Icon
+                            icon="charm:circle-tick"
+                            className="text-dark-green mr-2"
+                            style={{ fontSize: "14px" }} // Adjust icon size as needed
+                          />
+                          <p className="text-xs font-semibold text-dark-green">Paid</p>
+                        </span>
+                      )}
                     </div>
                   </div>
                   <p className="text-sm font-medium text-xs-light-gray">{transaction.amount}</p>
                 </div>
-                <div className="text-base font-semibold text-light-red">- {transaction.amount}</div>
+                {transaction.from === "Alpha" ? (
+                  <div className="text-base font-semibold text-light-red">- {transaction.amount}</div>
+                ) : (
+                  <div className="text-base font-semibold text-dark-green">+ {transaction.amount}</div>
+                )}
               </div>
             ))
           ) : (
@@ -96,4 +127,3 @@ const HistoryCard = () => {
 }
 
 export default HistoryCard;
-
