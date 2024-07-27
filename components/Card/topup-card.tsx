@@ -26,19 +26,19 @@ const TopUpCard = () => {
 
             <div className="max-w-sm mt-4 rounded-2xl overflow-hidden shadow-md p-3">
                 <p className="font-bold p-3 ml-2">Amount</p>
-                <div className="flex justify-center my-7">
+                <div className="flex justify-center my-6">
                     <input
                         type="number"
                         value={inputValue}
                         placeholder="50"
-                        className="text-black outline-none font-bold text-center text-4xl bg-transparent "
+                        className="text-black outline-none font-bold text-center text-5xl bg-transparent "
                         style={{ width: '5ch' }}
                         maxLength={5}
                         disabled
                     />
                 </div>
 
-                <div className="grid grid-cols-4 gap-4 m-2 my-12">
+                <div className="grid grid-cols-4 gap-4 m-2 my-10">
                     {amounts.map((amount) => (
                         <button
                             key={amount}
