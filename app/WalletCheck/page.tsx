@@ -5,7 +5,7 @@ import WalletInfor from '@/components/Card/info-card';
 import SwipeableButton from '../../components/Button/SwipeButton';
 
 export default function WalletCheck() {
-    const walletBalance = 1500; // Replace this with your actual balance value
+    const walletBalance = 100; // Replace this with your actual balance value
 
     return (
         <div>

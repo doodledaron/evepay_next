@@ -7,8 +7,8 @@ export default function Home() {
     <div className="flex flex-col mt-0 ">
       {/* <BackButton /> */}
 
-      <p className="font-bold text-3xl">Let's Sign you in.</p>
-      <p className="text-gray text-2xl mt-2 font-medium">Welcome back !</p>
+      <p className="font-bold text-2xl">Let's Sign you in.</p>
+      <p className="text-gray text-xl mt-2 font-medium">Welcome back !</p>
 
       <div>
         <LoginFields />
