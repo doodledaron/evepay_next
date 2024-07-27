@@ -1,4 +1,4 @@
-import NextButton from "../../components/Button/next-button";
+import TopUpButton from "../../components/Button/topup-button";
 import TopUpCard from "@/components/Card/topup-card";
 
 export default function TopUpPage() {
@@ -6,7 +6,7 @@ export default function TopUpPage() {
         <div>
             <TopUpCard />
 
-            <NextButton urlLink="/" buttonText="TopUp" />
+            <TopUpButton />
         </div>
     );
 }

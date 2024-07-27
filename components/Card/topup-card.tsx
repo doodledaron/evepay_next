@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const TopUpCard = () => {
     const amounts = [5, 10, 20, 50, 100, 150, 200, 300];
@@ -25,7 +26,7 @@ const TopUpCard = () => {
 
             <div className="max-w-sm mt-4 rounded-2xl overflow-hidden shadow-md p-3">
                 <p className="font-bold p-3 ml-3">Amount</p>
-                <div className="flex justify-center m-3">
+                <div className="flex justify-center my-7">
                     <input
                         type="number"
                         value={inputValue}
@@ -37,7 +38,7 @@ const TopUpCard = () => {
                     />
                 </div>
 
-                <div className="grid grid-cols-4 gap-4 m-2 mt-4">
+                <div className="grid grid-cols-4 gap-4 m-2 my-6">
                     {amounts.map((amount) => (
                         <button
                             key={amount}
