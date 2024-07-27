@@ -9,7 +9,7 @@ const NextButton: React.FC<ButtonProps> = ({ urlLink, buttonText }) => {
   return (
     <Link
       href={urlLink}
-      className="fixed bottom-0 w-4/5 self-center"
+      className="fixed bottom-5 w-4/5 self-center"
       // className="w-full"
       // className="absolute bottom-14 left-1/2 transform -translate-x-1/2 w-full max-w-sm"
     >
