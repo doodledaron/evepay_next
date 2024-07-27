@@ -4,7 +4,7 @@ import TopUpCard from "@/components/Card/topup-card";
 export default function TopUpPage() {
     return (
         <div>
-            <p className="text-base font-semibold text-gray">Choose a channel to Top Up</p>
+            <p className="text-base font-semibold">Choose a channel to Top Up</p>
             
             <TopUpCard />
 

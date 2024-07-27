@@ -9,11 +9,11 @@ const TopUpCard = () => {
     ];
 
     return (
-        <div className="mt-8 w-full max-h-fit rounded-2xl overflow-hidden border-gray-300" style={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)' }}>
+        <div className="mt-2 w-full max-h-fit rounded-2xl overflow-hidden border-gray-300" style={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)' }}>
             <div className="px-4 py-5">
                 {items.map(item => (
                     <div key={item.id} className="flex items-center py-4 border-b border-gray-300">
-                        <img src={item.image} alt={`Item ${item.description}`} className="w-30 h-20 mr-4" />
+                        <img src={item.image} alt={`Item ${item.description}`} className="w-14 h-14 mr-4" />
                     </div>
                 ))}
             </div>
