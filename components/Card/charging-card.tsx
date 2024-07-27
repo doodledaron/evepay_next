@@ -111,8 +111,6 @@ const ChargingCard: React.FC<CircularProgressionProps> = ({ serviceTab, index })
         </div>
       </div>
 
-      <hr className="h-1.5 bg-md-gray rounded-2xl mx-5 border-none" />
-
       <div className="grid grid-rows-1 grid-flow-col gap-4 px-6 py-2">
         <div className="col-span-7 font-bold text-base text-gray text-start">
           Total Spent
