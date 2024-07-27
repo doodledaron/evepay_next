@@ -6,11 +6,12 @@ import WalletInfor from '@/components/Card/info-card';
 import SwipeableButton from '../../components/Button/SwipeButton';
 
 export default function WalletCheck() {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const [availableToken, setAvailableToken] = useState<string>("");
     const [min_token, setMinToken] = useState<number>(0.01);
 
     useEffect(() => {
-        fetch("https://evepay.onrender.com/maschain_token/api_check_balance", {
+        fetch(`${apiUrl}/maschain_token/api_check_balance`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
