@@ -23,14 +23,14 @@ const TopUpCard = () => {
                 </div>
             </div>
 
-            <div className="max-w-sm mt-4 rounded-2xl overflow-hidden shadow-md">
-                <p className="font-bold p-3">Amount</p>
-                <div className="flex justify-center">
+            <div className="max-w-sm mt-4 rounded-2xl overflow-hidden shadow-md p-3">
+                <p className="font-bold p-3 ml-3">Amount</p>
+                <div className="flex justify-center m-3">
                     <input
                         type="number"
                         value={inputValue}
                         placeholder="50"
-                        className="text-black outline-none font-bold text-center text-2xl bg-transparent "
+                        className="text-black outline-none font-bold text-center text-3xl bg-transparent "
                         style={{ width: '5ch' }}
                         maxLength={5}
                         disabled
@@ -42,7 +42,7 @@ const TopUpCard = () => {
                         <button
                             key={amount}
                             onClick={() => handleButtonClick(amount)}
-                            className=" font-bold p-2 px-4 rounded-xl bg-slate-50  text-black hover:bg-lg-light-cyan"
+                            className=" font-bold p-3 rounded-xl bg-slate-50  text-black hover:bg-lg-light-cyan"
                         >
                             {amount}
                         </button>
