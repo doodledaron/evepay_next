@@ -12,7 +12,7 @@ const SwipeableButton: React.FC<ButtonProps> = ({ urlLink, buttonText }) => {
   return (
     <Link
       href={urlLink}
-      className={`${styles.btn} bottom-24 w-4/5 self-center`}
+      className={`${styles.btn} bottom-5 w-4/5 self-center`}
     >
       <span>
         <Icon icon="material-symbols:keyboard-double-arrow-right-rounded" />
