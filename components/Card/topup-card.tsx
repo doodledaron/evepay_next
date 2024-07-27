@@ -1,7 +1,14 @@
-import React from 'react'
+"use client";
+
+import React, { useState } from 'react';
 
 const TopUpCard = () => {
-    const amounts = [1, 5, 10, 20, 50, 100, 150, 200];
+    const amounts = [5, 10, 20, 50, 100, 150, 200, 300];
+    const [inputValue, setInputValue] = useState(50); 
+
+    const handleButtonClick = (amount: number) => {
+        setInputValue(amount); 
+    };
 
     return (
         <div>
@@ -17,14 +24,16 @@ const TopUpCard = () => {
             </div>
 
             <div className="max-w-sm mt-4 rounded-2xl overflow-hidden shadow-md">
-                <p className="font-bold p-1">Amount</p>
+                <p className="font-bold p-3">Amount</p>
                 <div className="flex justify-center">
                     <input
                         type="number"
+                        value={inputValue}
                         placeholder="50"
-                        className="outline-none font-bold text-center text-xl"
+                        className="text-black outline-none font-bold text-center text-2xl bg-transparent "
                         style={{ width: '5ch' }}
                         maxLength={5}
+                        disabled
                     />
                 </div>
 
@@ -32,7 +41,8 @@ const TopUpCard = () => {
                     {amounts.map((amount) => (
                         <button
                             key={amount}
-                            className=" font-bold py-2 px-4 rounded bg-slate-50  text-black hover:bg-lg-light-cyan"
+                            onClick={() => handleButtonClick(amount)}
+                            className=" font-bold p-2 px-4 rounded-xl bg-slate-50  text-black hover:bg-lg-light-cyan"
                         >
                             {amount}
                         </button>
