@@ -17,7 +17,7 @@ const TopUpButton = () => {
         <div className="fixed bottom-5 w-4/5 self-center">
             <button
                 onClick={showAlert}
-                className="mt-16 bg-light-cyan text-white text-center font-bold py-4 px-4 rounded-full w-full" // Added w-full
+                className="mt-16 bg-light-cyan text-white text-center font-bold py-4 px-4 rounded-full w-full"
             >
                 Proceed
             </button>
