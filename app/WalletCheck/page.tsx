@@ -18,7 +18,7 @@ export default function WalletCheck() {
 
                     <h1 className='text-center font-semibold text-lg'><strong>Maschain Wallet</strong></h1>
 
-                    {walletBalance > 1000 ? (
+                    {walletBalance > 4 ? (
                         <span className="relative inline-flex items-center justify-center w-6 h-6 bg-dark-green-transparent rounded-full">
                             <Icon icon="charm:circle-tick" className="text-dark-green" style={{ fontSize: "15" }} />
                         </span>
