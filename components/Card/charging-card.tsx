@@ -81,11 +81,12 @@ const ChargingCard: React.FC<CircularProgressionProps> = ({ serviceTab, index })
     text: {
       fill: "#000", // Color of the text (percentage)
       fontSize: '16px', // Font size of the text
+      fontWeight: "bold",
     },
   };
 
   return (
-    <div className="max-w-sm rounded-xl overflow-hidden shadow-xl min-w-80">
+    <div className="max-w-sm rounded-xl overflow-hidden shadow-xl min-w-80 mb-2">
       <div ref={containerRef} className="flex justify-center items-center h-60">
         <div style={{ width: '180px', height: '180px' }}>
           <CircularProgressbar

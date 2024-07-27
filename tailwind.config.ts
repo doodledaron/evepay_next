@@ -16,6 +16,7 @@ const config: Config = {
         'dark-green-transparent': 'rgba(0, 128, 0, 0.42)', 
         'gray': '#9A9A9A',
         'light-gray': '#FAF9F9',
+        'md-gray': '#D2D2D2',
         'xs-light-gray': '#959595',
         'light-blacK': '#555B6E'
       }
