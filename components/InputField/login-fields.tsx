@@ -16,7 +16,7 @@ const LoginFields = () => {
           className="flex-1 outline-none bg-transparent font-medium"
         />
       </div>
-      <div className="mt-12 flex items-center border border-gray rounded-lg p-4">
+      <div className="mt-8 flex items-center border border-gray rounded-lg p-4">
         <Icon
           icon="mdi:password"
           style={{ color: "#72ACA9", fontSize: "24px" }}

@@ -8,7 +8,7 @@ export default function Home() {
       {/* <BackButton /> */}
 
       <p className="font-bold text-3xl">Let's Sign you in.</p>
-      <p className="text-gray text-2xl mt-4 font-medium">Welcome back !</p>
+      <p className="text-gray text-2xl mt-2 font-medium">Welcome back !</p>
 
       <div>
         <LoginFields />
