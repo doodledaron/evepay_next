@@ -85,7 +85,7 @@ const ChargingCard: React.FC<CircularProgressionProps> = ({ serviceTab, index })
   };
 
   return (
-    <div className="max-w-sm rounded-md overflow-hidden shadow-xl">
+    <div className="max-w-sm rounded-xl overflow-hidden shadow-xl">
       <div ref={containerRef} className="flex justify-center items-center h-60">
         <div style={{ width: '180px', height: '180px' }}>
           <CircularProgressbar
@@ -110,14 +110,21 @@ const ChargingCard: React.FC<CircularProgressionProps> = ({ serviceTab, index })
         </div>
       </div>
 
+      <hr className="h-1.5 bg-md-gray rounded-2xl mx-5 border-none" />
+
       <div className="grid grid-rows-1 grid-flow-col gap-4 px-6 py-2">
-        <div className="col-span-5 font-bold text-base text-gray text-start">
+        <div className="col-span-7 font-bold text-base text-gray text-start">
           Total Spent
           <p className="text-black text-xl font-bold text-start">
             RM {currentRM.toFixed(2)}
           </p>
         </div>
-        <div className="col-span-5 font-bold text-3xl text-start">{currentKW.toFixed(2)} kW</div>
+        <div className="col-span-4 font-bold text-2xl text-end">
+          Total kW
+          <p className="text-black text-xl font-bold text-start">
+            {currentKW.toFixed(2)} kW
+          </p>
+        </div>
       </div>
     </div>
   );
