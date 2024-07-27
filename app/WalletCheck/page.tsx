@@ -5,7 +5,7 @@ import WalletInfor from '@/components/Card/info-card';
 import SwipeableButton from '../../components/Button/SwipeButton';
 
 export default function WalletCheck() {
-    const walletBalance = 100; // Replace this with your actual balance value
+    const walletBalance = 6; // Replace this with your actual balance value
 
     return (
         <div>
@@ -28,11 +28,12 @@ export default function WalletCheck() {
 
                 </div>
 
-                <p className='text-center font-semibold text-gray text-sm'>#M1242673</p>
+                <p className='text-center font-semibold text-gray text-sm'>#WalletID</p>
 
             </div ><WalletInfor />
 
-            {walletBalance > 1000 ? (
+            {/* 10% of 51.2kw */}
+            {walletBalance > 4 ? (
                 <SwipeableButton urlLink="/charging" buttonText="Swipe To Charge" />
             ) : (
                 <NextButton urlLink="/topup" buttonText="Top Up Now" />

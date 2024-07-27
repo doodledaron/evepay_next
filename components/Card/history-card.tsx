@@ -42,7 +42,7 @@ interface ApiResponse {
 
 const HistoryCard = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [availableToken, setAvailableToken] = useState<string>("52000 ETH"); // Adjust this based on actual data source
+  const [availableToken, setAvailableToken] = useState<string>("52000"); // Adjust this based on actual data source
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/maschain_token/api_get_transaction_from/0x5b3a8eCB9677F56e46d67B7e69900cE322c030d1")
@@ -60,7 +60,7 @@ const HistoryCard = () => {
       <div className="px-4 py-5">
         <div className='flex flex-row items-center justify-between bg-lg-light-cyan rounded-full px-4 py-3'>
           <div className='text-white text-sm'>Available Token</div>
-          <div className='text-white text-base font-bold'>{availableToken}</div>
+          <div className='text-white text-base font-bold'>{availableToken} EVEC</div>
         </div>
         <div className="py-8">
           <h2 className="text-base font-bold justify-center text-center py-4">Transaction History</h2>

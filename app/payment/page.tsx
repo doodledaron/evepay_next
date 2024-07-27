@@ -24,24 +24,24 @@ export default function PaymentPage() {
                                 <p className="text-base font-semibold text-gray">Energy Usage</p>
                                 <p className="text-base font-semibold text-gray">(in kW)</p>
                             </div>
-                            <div className="text-base font-semibold text-gray">10</div>
+                            <div className="text-base font-semibold text-gray">Put Here</div>
                         </div>
                         <div className="flex justify-between text-gray-700 text-base mt-4">
                             <div>
                                 <p className="text-base font-semibold text-gray">Amount</p>
                                 <p className="text-base font-semibold text-gray">(in RM)</p>
                             </div>
-                            <div className="text-base font-semibold text-gray">26.00</div>
+                            <div className="text-base font-semibold text-gray">Put Here</div>
                         </div>
                         <div className='flex items-center text-sm font-semibold text-light-blacK mt-4'>
                             <Icon icon="carbon:information-filled" className="text-xs-light-gray mr-2" style={{ fontSize: "14" }} />
-                            1 kW = RM22.60
+                            1 kW = RM0.80
                         </div>
                     </div>
                     <hr className="border-gray" />
                     <div className="py-5">
                         <div className="flex justify-between">
-                            <div className='text-xl font-semibold text-black'>Total (in EHT)</div>
+                            <div className='text-xl font-semibold text-black'>Total (in EVEC)</div>
                             <div className='text-xl font-semibold text-black'>520</div>
                         </div>
                     </div>
