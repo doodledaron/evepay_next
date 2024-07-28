@@ -13,7 +13,7 @@ const PaymentLayout = () => {
                 <h1 className='text-center font-semibold text-lg'><strong>Maschain Wallet</strong></h1>
             </div>
 
-            <p className='text-center font-semibold text-gray text-sm'>#M1242673</p>
+            <p className='text-center font-semibold text-gray text-sm'>0x5***0d1</p>
 
         </div>
     )
