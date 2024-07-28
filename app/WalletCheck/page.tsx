@@ -7,7 +7,7 @@ import SwipeableButton from '../../components/Button/SwipeButton';
 
 export default function WalletCheck() {
     // const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const apiUrl = 'https://evepay.onrender.com/'
+    const apiUrl = 'https://evepay.onrender.com'
     const [availableToken, setAvailableToken] = useState<string>("");
     const [min_token, setMinToken] = useState<number>(0.01);
 
