@@ -25,7 +25,7 @@ const WalletInfor: React.FC<WalletInforProps> = ({ availableToken }) => {
                             <p className="text-base font-semibold text-gray">Total Energy</p>
                             <p className="text-base font-semibold text-gray">(in kW)</p>
                         </div>
-                        <div className="text-base font-semibold text-gray">{totalEnergy}</div>
+                        <div className="text-base font-semibold text-gray">{totalEnergy.toFixed(2)}</div>
                     </div>
                     <div className="flex justify-between text-gray-700 text-base mt-4">
                         <div>
