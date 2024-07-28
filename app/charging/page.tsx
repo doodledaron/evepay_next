@@ -15,10 +15,10 @@ export default function WalletCheck() {
   const api_url = `https://evepay.onrender.com/maschain_token/api_transfer_token/${capacityUsed}`;
   // Define the payload
   const payload = {
-    wallet_address: "0x5b3a8eCB9677F56e46d67B7e69900cE322c030d1",
+    wallet_address: "0x91A9fd571BE76C48Abfa189BC6b575054800ee0c",
     to: "0xa5314CF6Bd3a4fB9e2448CC92899EA15f24b538e",
     amount: "7",
-    contract_address: "0xA10b5960afae880bA86cb3Bb5ec1Ae2eBAe19083",
+    contract_address: "0xFF9fE4aB4F4C255D4419B6366321e534eBE5eEdf",
     callback_url: "https://postman-echo.com/post?"
   };
 

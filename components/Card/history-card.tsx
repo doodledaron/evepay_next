@@ -39,7 +39,7 @@ const HistoryCard = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const fetchTransactions = fetch("https://evepay.onrender.com/maschain_token/api_get_all_transaction/0x5b3a8eCB9677F56e46d67B7e69900cE322c030d1")
+    const fetchTransactions = fetch("https://evepay.onrender.com/maschain_token/api_get_all_transaction/0x91A9fd571BE76C48Abfa189BC6b575054800ee0c")
       .then((response) => {
         if (!response.ok) {
           throw new Error("HTTP error! status: ${ response.status }");
@@ -53,8 +53,8 @@ const HistoryCard = () => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        wallet_address: "0x5b3a8eCB9677F56e46d67B7e69900cE322c030d1",
-        contract_address: "0xA10b5960afae880bA86cb3Bb5ec1Ae2eBAe19083"
+        wallet_address: "0x91A9fd571BE76C48Abfa189BC6b575054800ee0c",
+        contract_address: "0xFF9fE4aB4F4C255D4419B6366321e534eBE5eEdf"
       })
     }).then((response) => {
       if (!response.ok) {
@@ -124,7 +124,7 @@ const HistoryCard = () => {
                   </div>
                   <p className="text-sm font-medium text-xs-light-gray">{transaction.amount}</p>
                 </div>
-                {transaction.from === "Alpha" ? (
+                {transaction.from === "Jason" ? (
                   <div className="text-base font-semibold text-light-red">- {transaction.amount}</div>
                 ) : (
                   <div className="text-base font-semibold text-dark-green">+ {transaction.amount}</div>

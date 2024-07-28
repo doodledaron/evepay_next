@@ -19,8 +19,8 @@ export default function WalletCheck() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                wallet_address: "0x5b3a8eCB9677F56e46d67B7e69900cE322c030d1",
-                contract_address: "0xA10b5960afae880bA86cb3Bb5ec1Ae2eBAe19083"
+                wallet_address: "0x91A9fd571BE76C48Abfa189BC6b575054800ee0c",
+                contract_address: "0xFF9fE4aB4F4C255D4419B6366321e534eBE5eEdf"
             })
         })
             .then((response) => {
@@ -58,7 +58,7 @@ export default function WalletCheck() {
                         <Icon icon="mingcute:warning-fill" className="text-light-red" style={{ fontSize: "23px" }} />
                     )}
                 </div>
-                <p className='text-center font-semibold text-gray text-sm'>0x5***0d1</p>
+                <p className='text-center font-semibold text-gray text-sm'>0x9***e0c</p>
             </div>
             <WalletInfor availableToken={availableToken} />
             {Number(availableToken) > min_token ? (
