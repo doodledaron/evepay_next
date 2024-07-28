@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useState } from 'react';
-import Swal from 'sweetalert2';
+import React from 'react';
 
-const TopUpCard = () => {
+const TopUpCard = ({ inputValue, setInputValue, topUp }: { inputValue: number; setInputValue: (value: number) => void; topUp: () => void }) => {
     const amounts = [5, 10, 20, 50, 100, 150, 200, 300];
-    const [inputValue, setInputValue] = useState(50); 
 
     const handleButtonClick = (amount: number) => {
-        setInputValue(amount); 
+        setInputValue(amount);
     };
 
     return (
@@ -18,9 +16,7 @@ const TopUpCard = () => {
                     <div className="col-span-8 font-bold text-base text-gray">
                         <img src="/pbe.png" alt="TNG" width={150} height={100} />
                     </div>
-                    <div className="col-span-2 font-bold text-base text-gray">
-
-                    </div>
+                    <div className="col-span-2 font-bold text-base text-gray"></div>
                 </div>
             </div>
 
@@ -31,7 +27,7 @@ const TopUpCard = () => {
                         type="number"
                         value={inputValue}
                         placeholder="50"
-                        className="text-black outline-none font-bold text-center text-5xl bg-transparent "
+                        className="text-black outline-none font-bold text-center text-5xl bg-transparent"
                         style={{ width: '5ch' }}
                         maxLength={5}
                         disabled
@@ -43,7 +39,7 @@ const TopUpCard = () => {
                         <button
                             key={amount}
                             onClick={() => handleButtonClick(amount)}
-                            className=" font-bold p-3 rounded-lg bg-slate-100 text-black hover:bg-lg-light-cyan"
+                            className="font-bold p-3 rounded-lg bg-slate-100 text-black hover:bg-lg-light-cyan"
                         >
                             {amount}
                         </button>
@@ -51,7 +47,7 @@ const TopUpCard = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default TopUpCard
+export default TopUpCard;

@@ -48,7 +48,7 @@ const ChargingCard: React.FC<CircularProgressionProps> = ({ serviceTab, index })
                   clearInterval(interval); // Clear the interval if the target is reached
                   return prev;
                 });
-              }, 300); // Adjust the interval duration as needed (in milliseconds)
+              }, 100); // Adjust the interval duration as needed (in milliseconds)
             }
           }
         });

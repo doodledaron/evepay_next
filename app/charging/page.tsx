@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import ChargingCard from "../../components/Card/charging-card";
 import NextButton from "../../components/Button/next-button";
 
-
 export default function WalletCheck() {
   const serviceTab = [
     {
@@ -12,7 +11,7 @@ export default function WalletCheck() {
     }
   ];
 
-  const capacityUsed = 1.1;
+  const capacityUsed = 51.2;
   const api_url = `https://evepay.onrender.com/maschain_token/api_transfer_token/${capacityUsed}`;
   // Define the payload
   const payload = {
@@ -56,7 +55,7 @@ export default function WalletCheck() {
   //     }
   //   };
 
-  //   const timer = setTimeout(sendMessage, 30000); // 30 seconds
+  //   const timer = setTimeout(sendMessage, 1000); // 30 seconds
 
   //   return () => clearTimeout(timer); // Cleanup timer on unmount
   // }, []);
@@ -81,8 +80,8 @@ export default function WalletCheck() {
       </div>
 
       <NextButton urlLink={api_url} buttonText="Proceed To Pay" payload={payload} />
-
-      {/* {loading && <p>Sending message...</p>}
+      {/* 
+      {loading && <p>Sending message...</p>}
       {success && <p>Message sent successfully.</p>}
       {error && <p>Something went wrong. Please check the number.</p>} */}
     </div>

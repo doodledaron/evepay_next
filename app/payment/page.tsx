@@ -28,7 +28,7 @@ const PaymentPage: React.FC = () => {
         return <p>No energy usage available</p>; // Fallback UI if amount is not available
     }
 
-    const amount = energyUsages * 1.25;
+    const amount = energyUsages / 1.25;
 
     return (
         <div>
