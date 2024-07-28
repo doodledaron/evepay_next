@@ -17,7 +17,7 @@ const WalletInfor: React.FC<WalletInforProps> = ({ availableToken }) => {
             <div className="px-4 py-5">
                 <div className='flex flex-row items-center justify-between bg-lg-light-cyan rounded-full px-4 py-3'>
                     <div className='text-white text-sm'>Available Token</div>
-                    <div className='text-white text-base font-bold'>{availableToken}</div>
+                    <div className='text-white text-base font-bold'>{availableToken} EVEC</div>
                 </div>
                 <div className="py-8">
                     <div className="flex justify-between text-gray-700 text-base">
