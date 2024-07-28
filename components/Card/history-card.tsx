@@ -78,9 +78,15 @@ const HistoryCard = () => {
         } else {
           console.error('Failed to fetch balance:', balanceData.message);
         }
+
+        // Set loading to false after data is fetched
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching the API:", error);
+
+        // Set loading to false after data is fetched
+        setLoading(false);
       });
   }, []);
 
