@@ -83,10 +83,10 @@ export default function WalletCheck() {
       </div>
 
       <NextButton urlLink={api_url} buttonText="Proceed To Pay" payload={payload} />
-      {/* 
+
       {loading && <p>Sending message...</p>}
       {success && <p>Message sent successfully.</p>}
-      {error && <p>Something went wrong. Please check the number.</p>} */}
+      {error && <p>Something went wrong. Please check the number.</p>}
     </div>
   );
 }

@@ -17,7 +17,7 @@ const NextButton: React.FC<ButtonProps> = ({ urlLink, buttonText }) => {
     return (
         <button
             onClick={handleClick}
-            className="fixed bottom-24 w-4/5 self-center mt-16 bg-light-cyan text-white text-center font-bold py-4 px-4 rounded-full hover:opacity-90"
+            className="fixed bottom-8 w-4/5 self-center mt-16 bg-light-cyan text-white text-center font-bold py-4 px-4 rounded-full hover:opacity-90"
         >
             {buttonText}
         </button>
