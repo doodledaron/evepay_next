@@ -73,7 +73,7 @@ export default function WalletCheck() {
                   <ChargingCard
                     serviceTab={serviceTab}
                     index={index}
-                    onPercentageChange={setChargingPercentage} // Pass down the percentage change handler
+                  // onPercentageChange={setChargingPercentage} // Pass down the percentage change handler
                   />
                 </div>
               </div>
