@@ -95,7 +95,7 @@ const HistoryCard = () => {
                 <div className="flex flex-col">
                   <div className="flex flex-row items-center">
                     <p className="text-base font-medium">{new Date(transaction.timestamp).toLocaleDateString()}</p>
-                    <div className="pl-3 flex items-center justify-center">
+                    {/* <div className="pl-3 flex items-center justify-center">
                       {transaction.from === "Alpha" && (
                         <span className="flex items-center justify-center bg-dark-green-transparent rounded-full px-3 py-0.5">
                           <Icon
@@ -106,7 +106,7 @@ const HistoryCard = () => {
                           <p className="text-xs font-semibold text-dark-green">Paid</p>
                         </span>
                       )}
-                    </div>
+                    </div> */}
                   </div>
                   <p className="text-sm font-medium text-xs-light-gray">{transaction.amount}</p>
                 </div>
