@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { Icon } from "@iconify/react";
+import Loading from "@/components/Loading/loading";
 
 interface Token {
   contract_address: string;
@@ -35,6 +36,7 @@ interface BalanceResponse {
 const HistoryCard = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [availableToken, setAvailableToken] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchTransactions = fetch("https://evepay.onrender.com/maschain_token/api_get_all_transaction/0x5b3a8eCB9677F56e46d67B7e69900cE322c030d1")
@@ -61,6 +63,8 @@ const HistoryCard = () => {
       return response.json();
     });
 
+    setLoading(true);
+
     Promise.all([fetchTransactions, fetchBalance])
       .then(([transactionData, balanceData]) => {
         if (transactionData.status === 'success') {
@@ -79,6 +83,10 @@ const HistoryCard = () => {
         console.error("Error fetching the API:", error);
       });
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="mt-8 w-full max-h-fit rounded-2xl overflow-hidden border-gray-300" style={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)' }}>

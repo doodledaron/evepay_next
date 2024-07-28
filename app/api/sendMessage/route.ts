@@ -9,7 +9,7 @@ export async function POST(req: Request) {
   // Target phone number
   const phone = '+601116552368';
   // Message to send
-  const message = 'Your charging session has ended. Total Amount was: ';
+  const message = "Your charging session is complete! Please remember to move your car to avoid any additional fees.";
 
   try {
     await client.messages.create({

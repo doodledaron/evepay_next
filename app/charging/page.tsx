@@ -24,41 +24,43 @@ export default function WalletCheck() {
 
 
   //sms
-  // const [loading, setLoading] = useState(false);
-  // const [success, setSuccess] = useState(false);
-  // const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const [chargingPercentage, setChargingPercentage] = useState(0)
 
-  // useEffect(() => {
-  //   const sendMessage = async () => {
-  //     setLoading(true);
-  //     setError(false);
-  //     setSuccess(false);
+  useEffect(() => {
+    const sendMessage = async () => {
+      setLoading(true);
+      setError(false);
+      setSuccess(false);
 
-  //     try {
-  //       const res = await fetch('/api/sendMessage', {
-  //         method: 'POST',
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //         },
-  //       });
-  //       const apiResponse = await res.json();
+      try {
+        const res = await fetch('/api/sendMessage', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        const apiResponse = await res.json();
 
-  //       if (apiResponse.success) {
-  //         setSuccess(true);
-  //       } else {
-  //         setError(true);
-  //       }
-  //     } catch (error) {
-  //       setError(true);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
+        if (apiResponse.success) {
+          setSuccess(true);
+        } else {
+          setError(true);
+        }
+      } catch (error) {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  //   const timer = setTimeout(sendMessage, 1000); // 30 seconds
-
-  //   return () => clearTimeout(timer); // Cleanup timer on unmount
-  // }, []);
+    // Check percentage and send message when it reaches 100%
+    if (chargingPercentage === 100) {
+      sendMessage();
+    }
+  }, [chargingPercentage]);
 
   return (
     <div>
@@ -71,6 +73,7 @@ export default function WalletCheck() {
                   <ChargingCard
                     serviceTab={serviceTab}
                     index={index}
+                    onPercentageChange={setChargingPercentage} // Pass down the percentage change handler
                   />
                 </div>
               </div>
