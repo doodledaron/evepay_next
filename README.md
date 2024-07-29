@@ -7,4 +7,4 @@ EvePay is proposed to increase the number of EV charging stations by unifying al
 ## Project link:
 https://www.youtube.com/watch?v=mNYHuk88xAQ 
 
-The codebase is contributed by our frontend lead https://github.com/marson00
+The codebase is contributed by our frontend lead https://github.com/marson00 and https://github.com/Jing-Rou
